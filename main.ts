@@ -19,15 +19,23 @@ input.onButtonPressed(Button.A, function () {
     // creates the sprite
     sprite = game.createSprite(0, 0)
 
-    while (counterTwo < 4) {
-        counterOne = counterOne + 1
-        sprite.move(1)
-        basic.pause(500)
+        while (counterOne < 4) {
+            basic.pause(250)
+            counterOne = counterOne + 1
+            sprite.move(1)
+            basic.pause(250)
 
-        while (counterOne = 4) {
-            sprite.turn(Direction.Right, 90)
-            counterOne = 0
-            counterTwo = counterTwo + 1
+            while (counterOne == 4) {
+                sprite.turn(Direction.Right, 90)
+                counterOne = 0
+                counterTwo = counterTwo + 1
+                basic.pause(500)
+
+                if (counterTwo == 4) {
+                    sprite.delete()
+                    basic.showIcon(IconNames.Yes)
+                }
+            }
         }
-    }
+    
 })
