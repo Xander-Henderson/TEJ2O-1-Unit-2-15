@@ -20,18 +20,21 @@ input.onButtonPressed(Button.A, function () {
     sprite = game.createSprite(0, 0)
 
         while (counterOne < 4) {
+            // moves the sprite forwards one space
             basic.pause(250)
             counterOne = counterOne + 1
             sprite.move(1)
             basic.pause(250)
 
             while (counterOne == 4) {
+                // turns the sprite right 90 degrees
                 sprite.turn(Direction.Right, 90)
                 counterOne = 0
                 counterTwo = counterTwo + 1
                 basic.pause(500)
 
                 if (counterTwo == 4) {
+                    // deletes the sprite after it is done
                     sprite.delete()
                     basic.showIcon(IconNames.Yes)
                 }
